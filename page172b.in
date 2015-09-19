@@ -1,0 +1,27 @@
+%============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 0.00 (+ 0.00) seconds.
+% Length of proof is 4.
+% Level of proof is 2.
+% Maximum clause weight is 1.
+% Given clauses 0.
+
+%1 B | K | G # label(non_clause) # label(goal).  [goal].
+%2 K.  [assumption].
+%4 -K.  [deny(1)].
+%5 $F.  [resolve(4,a,2,a)].
+
+%============================== end of proof ==========================
+
+formulas(assumptions).
+
+ % assumption
+K.
+
+end_of_list.
+
+formulas(goals).
+ % goal
+  B | (K |G).
+end_of_list.

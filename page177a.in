@@ -1,0 +1,40 @@
+%============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 0.00 (+ 0.00) seconds.
+% Length of proof is 11.
+% Level of proof is 3.
+% Maximum clause weight is 2.
+% Given clauses 0.
+
+%1 H -> -N # label(non_clause).  [assumption].
+%2 (H | G) & -M # label(non_clause).  [assumption].
+%3 -N <-> G | B # label(non_clause).  [assumption].
+%4 -N # label(non_clause) # label(goal).  [goal].
+%5 -H | -N.  [clausify(1)].
+%6 H | G.  [clausify(2)].
+%9 -N | -G.  [clausify(3)].
+%11 N.  [deny(4)].
+%13 -G.  [back_unit_del(9),unit_del(a,11)].
+%14 -H.  [back_unit_del(5),unit_del(b,11)].
+%15 $F.  [back_unit_del(6),unit_del(a,14),unit_del(b,13)].
+
+%============================== end of proof ==========================
+
+formulas(assumptions).
+
+ % assumption
+H -> (-N).
+
+% assumption
+(H | G) & -M.
+
+% assumption
+-N <-> (G | B).
+
+end_of_list.
+
+formulas(goals).
+ % goal
+  -N.
+end_of_list.

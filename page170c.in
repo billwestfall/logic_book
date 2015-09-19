@@ -1,0 +1,25 @@
+%============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 0.00 (+ 0.00) seconds.
+% Length of proof is 2.
+% Level of proof is 1.
+% Maximum clause weight is 0.
+% Given clauses 0.
+
+%1 M & -M # label(non_clause).  [assumption].
+%3 $F.  [clausify(1)].
+
+%============================== end of proof ==========================
+
+formulas(assumptions).
+
+ % assumption
+M & -M.
+
+end_of_list.
+
+formulas(goals).
+ % goal
+  K.
+end_of_list.

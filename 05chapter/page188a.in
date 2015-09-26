@@ -1,0 +1,137 @@
+============================== Prover9 ===============================
+Prover9 (64) version 2009-11A, November 2009.
+Process 5336 was started by billw on MacBook-Air.local,
+Sat Sep 26 12:03:42 2015
+The command was "./bin/prover9 -f /Users/billw/Documents/sage/github/page188a.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file /Users/billw/Documents/sage/github/page188a.in
+
+
+formulas(assumptions).
+G & S | N.
+end_of_list.
+
+formulas(goals).
+(G | N) & (S | N).
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 G & S | N # label(non_clause).  [assumption].
+2 (G | N) & (S | N) # label(non_clause) # label(goal).  [goal].
+
+============================== end of process non-clausal formulas ===
+
+============================== PROCESS INITIAL CLAUSES ===============
+
+% Clauses before input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+G | N.  [clausify(1)].
+S | N.  [clausify(1)].
+-G | -S.  [deny(2)].
+-N.  [deny(2)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== PREDICATE ELIMINATION =================
+
+No predicates eliminated.
+
+============================== end predicate elimination =============
+
+Auto_denials:  (non-Horn, no changes).
+
+Term ordering decisions:
+Predicate symbol precedence:  predicate_order([ N, G, S ]).
+Function symbol precedence:  function_order([ ]).
+After inverse_order:  (no changes).
+Unfolding symbols: (none).
+
+Auto_inference settings:
+  % set(binary_resolution).  % (non-Horn)
+  % set(neg_ur_resolution).  % (non-Horn, less than 100 clauses)
+
+Auto_process settings:
+  % set(factor).  % (non-Horn)
+  % set(unit_deletion).  % (non-Horn)
+
+kept:      3 G | N.  [clausify(1)].
+kept:      4 S | N.  [clausify(1)].
+kept:      5 -G | -S.  [deny(2)].
+kept:      6 -N.  [deny(2)].
+kept:      7 S.  [back_unit_del(4),unit_del(b,6)].
+kept:      8 G.  [back_unit_del(3),unit_del(b,6)].
+-------- Proof 1 --------
+
+============================== PROOF =================================
+
+% Proof 1 at 0.01 (+ 0.00) seconds.
+% Length of proof is 9.
+% Level of proof is 3.
+% Maximum clause weight is 2.000.
+% Given clauses 0.
+
+1 G & S | N # label(non_clause).  [assumption].
+2 (G | N) & (S | N) # label(non_clause) # label(goal).  [goal].
+3 G | N.  [clausify(1)].
+4 S | N.  [clausify(1)].
+5 -G | -S.  [deny(2)].
+6 -N.  [deny(2)].
+7 S.  [back_unit_del(4),unit_del(b,6)].
+8 G.  [back_unit_del(3),unit_del(b,6)].
+9 $F.  [back_unit_del(5),unit_del(a,8),unit_del(b,7)].
+
+============================== end of proof ==========================
+
+============================== STATISTICS ============================
+
+Given=0. Generated=7. Kept=6. proofs=1.
+Usable=0. Sos=1. Demods=0. Limbo=2, Disabled=7. Hints=0.
+Kept_by_rule=0, Deleted_by_rule=0.
+Forward_subsumed=0. Back_subsumed=0.
+Sos_limit_deleted=0. Sos_displaced=0. Sos_removed=0.
+New_demodulators=0 (0 lex), Back_demodulated=0. Back_unit_deleted=3.
+Demod_attempts=0. Demod_rewrites=0.
+Res_instance_prunes=0. Para_instance_prunes=0. Basic_paramod_prunes=0.
+Nonunit_fsub_feature_tests=0. Nonunit_bsub_feature_tests=3.
+Megabytes=0.03.
+User_CPU=0.01, System_CPU=0.00, Wall_clock=0.
+
+============================== end of statistics =====================
+
+============================== end of search =========================
+
+THEOREM PROVED
+
+THEOREM PROVED
+
+Exiting with 1 proof.
+
+------ process 5336 exit (max_proofs) ------
+
+Process 5336 exit (max_proofs) Sat Sep 26 12:03:42 2015
+
+
+formulas(assumptions).
+
+ % assumption
+(G & S) | N.
+
+end_of_list.
+
+formulas(goals).
+ % goal
+  (G|N) & (S|N).
+end_of_list.

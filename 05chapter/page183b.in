@@ -1,0 +1,156 @@
+============================== Prover9 ===============================
+Prover9 (64) version 2009-11A, November 2009.
+Process 95358 was started by billw on MacBook-Air.local,
+Fri Sep 25 21:54:42 2015
+The command was "./bin/prover9 -f /Users/billw/Documents/sage/github/page183b.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file /Users/billw/Documents/sage/github/page183b.in
+
+
+formulas(assumptions).
+--P -> W & -D.
+-P.
+end_of_list.
+
+formulas(goals).
+-D.
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 --P -> W & -D # label(non_clause).  [assumption].
+2 -D # label(non_clause) # label(goal).  [goal].
+
+============================== end of process non-clausal formulas ===
+
+============================== PROCESS INITIAL CLAUSES ===============
+
+% Clauses before input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+-P | W.  [clausify(1)].
+-P | -D.  [clausify(1)].
+-P.  [assumption].
+D.  [deny(2)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== PREDICATE ELIMINATION =================
+
+No predicates eliminated.
+
+============================== end predicate elimination =============
+
+Auto_denials:
+  % assign(max_proofs, 2).  % (Horn set with more than one neg. clause)
+
+WARNING: denials share constants (see output).
+
+
+WARNING, because some of the denials share constants,
+some of the denials or their descendents may be subsumed,
+preventing the target number of proofs from being found.
+The shared constants are:  P.
+
+Term ordering decisions:
+Predicate symbol precedence:  predicate_order([ D, P, W ]).
+Function symbol precedence:  function_order([ ]).
+After inverse_order:  (no changes).
+Unfolding symbols: (none).
+
+Auto_inference settings:
+  % set(neg_binary_resolution).  % (HNE depth_diff=0)
+  % clear(ordered_res).  % (HNE depth_diff=0)
+  % set(ur_resolution).  % (HNE depth_diff=0)
+    % set(ur_resolution) -> set(pos_ur_resolution).
+    % set(ur_resolution) -> set(neg_ur_resolution).
+
+Auto_process settings:
+  % set(unit_deletion).  % (Horn set with negative nonunits)
+
+kept:      3 -P | W.  [clausify(1)].
+kept:      4 -P | -D.  [clausify(1)].
+kept:      5 -P.  [assumption].
+kept:      6 D.  [deny(2)].
+
+============================== end of process initial clauses ========
+
+============================== CLAUSES FOR SEARCH ====================
+
+% Clauses after input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+5 -P.  [assumption].
+6 D.  [deny(2)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== end of clauses for search =============
+
+============================== SEARCH ================================
+
+% Starting search at 0.01 seconds.
+
+given #1 (I,wt=1): 5 -P.  [assumption].
+
+given #2 (I,wt=1): 6 D.  [deny(2)].
+
+============================== STATISTICS ============================
+
+Given=2. Generated=4. Kept=4. proofs=0.
+Usable=2. Sos=0. Demods=0. Limbo=0, Disabled=6. Hints=0.
+Kept_by_rule=0, Deleted_by_rule=0.
+Forward_subsumed=0. Back_subsumed=2.
+Sos_limit_deleted=0. Sos_displaced=0. Sos_removed=0.
+New_demodulators=0 (0 lex), Back_demodulated=0. Back_unit_deleted=0.
+Demod_attempts=0. Demod_rewrites=0.
+Res_instance_prunes=0. Para_instance_prunes=0. Basic_paramod_prunes=0.
+Nonunit_fsub_feature_tests=0. Nonunit_bsub_feature_tests=4.
+Megabytes=0.02.
+User_CPU=0.01, System_CPU=0.00, Wall_clock=0.
+
+============================== end of statistics =====================
+
+============================== end of search =========================
+
+SEARCH FAILED
+
+SEARCH FAILED
+
+Exiting with failure.
+
+------ process 95358 exit (sos_empty) ------
+
+Process 95358 exit (sos_empty) Fri Sep 25 21:54:42 2015
+
+
+formulas(assumptions).
+
+ % assumption
+-(-P) -> (W & -D).
+
+% assumption
+-P.
+
+end_of_list.
+
+formulas(goals).
+ % goal
+  -D.
+end_of_list.

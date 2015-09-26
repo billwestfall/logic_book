@@ -1,0 +1,160 @@
+============================== Prover9 ===============================
+Prover9 (64) version 2009-11A, November 2009.
+Process 99997 was started by billw on MacBook-Air.local,
+Fri Sep 25 23:03:32 2015
+The command was "./bin/prover9 -f /Users/billw/Documents/sage/github/page184a.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file /Users/billw/Documents/sage/github/page184a.in
+
+
+formulas(assumptions).
+(G -> --M) & G.
+end_of_list.
+
+formulas(goals).
+M.
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 (G -> --M) & G # label(non_clause).  [assumption].
+2 M # label(non_clause) # label(goal).  [goal].
+
+============================== end of process non-clausal formulas ===
+
+============================== PROCESS INITIAL CLAUSES ===============
+
+% Clauses before input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+-G | M.  [clausify(1)].
+G.  [clausify(1)].
+-M.  [deny(2)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== PREDICATE ELIMINATION =================
+
+No predicates eliminated.
+
+============================== end predicate elimination =============
+
+Auto_denials:  (no changes).
+
+Term ordering decisions:
+Predicate symbol precedence:  predicate_order([ G, M ]).
+Function symbol precedence:  function_order([ ]).
+After inverse_order:  (no changes).
+Unfolding symbols: (none).
+
+Auto_inference settings:
+  % set(neg_binary_resolution).  % (HNE depth_diff=0)
+  % clear(ordered_res).  % (HNE depth_diff=0)
+  % set(ur_resolution).  % (HNE depth_diff=0)
+    % set(ur_resolution) -> set(pos_ur_resolution).
+    % set(ur_resolution) -> set(neg_ur_resolution).
+
+Auto_process settings:  (no changes).
+
+kept:      3 -G | M.  [clausify(1)].
+kept:      4 G.  [clausify(1)].
+kept:      5 -M.  [deny(2)].
+
+============================== end of process initial clauses ========
+
+============================== CLAUSES FOR SEARCH ====================
+
+% Clauses after input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+3 -G | M.  [clausify(1)].
+4 G.  [clausify(1)].
+5 -M.  [deny(2)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== end of clauses for search =============
+
+============================== SEARCH ================================
+
+% Starting search at 0.01 seconds.
+
+given #1 (I,wt=2): 3 -G | M.  [clausify(1)].
+
+given #2 (I,wt=1): 4 G.  [clausify(1)].
+-------- Proof 1 --------
+
+============================== PROOF =================================
+
+% Proof 1 at 0.01 (+ 0.01) seconds.
+% Length of proof is 7.
+% Level of proof is 3.
+% Maximum clause weight is 2.000.
+% Given clauses 2.
+
+1 (G -> --M) & G # label(non_clause).  [assumption].
+2 M # label(non_clause) # label(goal).  [goal].
+3 -G | M.  [clausify(1)].
+4 G.  [clausify(1)].
+5 -M.  [deny(2)].
+6 M.  [ur(3,a,4,a)].
+7 $F.  [resolve(6,a,5,a)].
+
+============================== end of proof ==========================
+
+============================== STATISTICS ============================
+
+Given=2. Generated=4. Kept=4. proofs=1.
+Usable=2. Sos=1. Demods=0. Limbo=0, Disabled=3. Hints=0.
+Kept_by_rule=0, Deleted_by_rule=0.
+Forward_subsumed=0. Back_subsumed=0.
+Sos_limit_deleted=0. Sos_displaced=0. Sos_removed=0.
+New_demodulators=0 (0 lex), Back_demodulated=0. Back_unit_deleted=0.
+Demod_attempts=0. Demod_rewrites=0.
+Res_instance_prunes=0. Para_instance_prunes=0. Basic_paramod_prunes=0.
+Nonunit_fsub_feature_tests=0. Nonunit_bsub_feature_tests=1.
+Megabytes=0.03.
+User_CPU=0.01, System_CPU=0.01, Wall_clock=0.
+
+============================== end of statistics =====================
+
+============================== end of search =========================
+
+THEOREM PROVED
+
+THEOREM PROVED
+
+Exiting with 1 proof.
+
+------ process 99997 exit (max_proofs) ------
+
+Process 99997 exit (max_proofs) Fri Sep 25 23:03:32 2015
+
+
+formulas(assumptions).
+
+ % assumption
+(G -> --M) & G.
+
+end_of_list.
+
+formulas(goals).
+ % goal
+  M.
+end_of_list.

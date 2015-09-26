@@ -1,0 +1,152 @@
+============================== Prover9 ===============================
+Prover9 (64) version 2009-11A, November 2009.
+Process 13846 was started by billw on MacBook-Air.local,
+Sat Sep 26 14:10:57 2015
+The command was "./bin/prover9 -f /Users/billw/Documents/sage/github/page203a.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file /Users/billw/Documents/sage/github/page203a.in
+
+
+formulas(assumptions).
+W -> (H -> -M).
+T <-> -(H -> -M).
+end_of_list.
+
+formulas(goals).
+-(W & T).
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 W -> (H -> -M) # label(non_clause).  [assumption].
+2 T <-> -(H -> -M) # label(non_clause).  [assumption].
+3 -(W & T) # label(non_clause) # label(goal).  [goal].
+
+============================== end of process non-clausal formulas ===
+
+============================== PROCESS INITIAL CLAUSES ===============
+
+% Clauses before input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+-W | -H | -M.  [clausify(1)].
+-T | H.  [clausify(2)].
+-T | M.  [clausify(2)].
+T | -H | -M.  [clausify(2)].
+W.  [deny(3)].
+T.  [deny(3)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== PREDICATE ELIMINATION =================
+
+No predicates eliminated.
+
+============================== end predicate elimination =============
+
+Auto_denials:  (no changes).
+
+Term ordering decisions:
+Predicate symbol precedence:  predicate_order([ T, H, M, W ]).
+Function symbol precedence:  function_order([ ]).
+After inverse_order:  (no changes).
+Unfolding symbols: (none).
+
+Auto_inference settings:
+  % set(neg_binary_resolution).  % (HNE depth_diff=0)
+  % clear(ordered_res).  % (HNE depth_diff=0)
+  % set(ur_resolution).  % (HNE depth_diff=0)
+    % set(ur_resolution) -> set(pos_ur_resolution).
+    % set(ur_resolution) -> set(neg_ur_resolution).
+
+Auto_process settings:
+  % set(unit_deletion).  % (Horn set with negative nonunits)
+
+kept:      4 -W | -H | -M.  [clausify(1)].
+kept:      5 -T | H.  [clausify(2)].
+kept:      6 -T | M.  [clausify(2)].
+kept:      7 T | -H | -M.  [clausify(2)].
+kept:      8 W.  [deny(3)].
+kept:      9 T.  [deny(3)].
+kept:      10 -H | -M.  [back_unit_del(4),unit_del(a,8)].
+kept:      11 M.  [back_unit_del(6),unit_del(a,9)].
+kept:      12 H.  [back_unit_del(5),unit_del(a,9)].
+-------- Proof 1 --------
+
+============================== PROOF =================================
+
+% Proof 1 at 0.01 (+ 0.00) seconds.
+% Length of proof is 12.
+% Level of proof is 3.
+% Maximum clause weight is 3.000.
+% Given clauses 0.
+
+1 W -> (H -> -M) # label(non_clause).  [assumption].
+2 T <-> -(H -> -M) # label(non_clause).  [assumption].
+3 -(W & T) # label(non_clause) # label(goal).  [goal].
+4 -W | -H | -M.  [clausify(1)].
+5 -T | H.  [clausify(2)].
+6 -T | M.  [clausify(2)].
+8 W.  [deny(3)].
+9 T.  [deny(3)].
+10 -H | -M.  [back_unit_del(4),unit_del(a,8)].
+11 M.  [back_unit_del(6),unit_del(a,9)].
+12 H.  [back_unit_del(5),unit_del(a,9)].
+13 $F.  [back_unit_del(10),unit_del(a,12),unit_del(b,11)].
+
+============================== end of proof ==========================
+
+============================== STATISTICS ============================
+
+Given=0. Generated=10. Kept=9. proofs=1.
+Usable=0. Sos=2. Demods=0. Limbo=2, Disabled=11. Hints=0.
+Kept_by_rule=0, Deleted_by_rule=0.
+Forward_subsumed=0. Back_subsumed=1.
+Sos_limit_deleted=0. Sos_displaced=0. Sos_removed=0.
+New_demodulators=0 (0 lex), Back_demodulated=0. Back_unit_deleted=4.
+Demod_attempts=0. Demod_rewrites=0.
+Res_instance_prunes=0. Para_instance_prunes=0. Basic_paramod_prunes=0.
+Nonunit_fsub_feature_tests=0. Nonunit_bsub_feature_tests=6.
+Megabytes=0.03.
+User_CPU=0.01, System_CPU=0.00, Wall_clock=0.
+
+============================== end of statistics =====================
+
+============================== end of search =========================
+
+THEOREM PROVED
+
+THEOREM PROVED
+
+Exiting with 1 proof.
+
+------ process 13846 exit (max_proofs) ------
+
+Process 13846 exit (max_proofs) Sat Sep 26 14:10:57 2015
+
+
+formulas(assumptions).
+
+ % assumption
+W -> (H -> -M).
+
+% assumption
+T <-> -(H -> -M).
+
+end_of_list.
+
+formulas(goals).
+ % goal
+  -(W & T).
+end_of_list.

@@ -1,0 +1,206 @@
+============================== Prover9 ===============================
+Prover9 (64) version 2009-11A, November 2009.
+Process 28049 was started by billw on MacBook-Air.local,
+Sat Sep 26 21:53:41 2015
+The command was "/Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f page213a.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file page213a.in
+
+
+formulas(assumptions).
+K -> -F & H.
+-F & H -> J.
+J -> K.
+end_of_list.
+
+formulas(goals).
+-F & H <-> K.
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 K -> -F & H # label(non_clause).  [assumption].
+2 -F & H -> J # label(non_clause).  [assumption].
+3 J -> K # label(non_clause).  [assumption].
+4 -F & H <-> K # label(non_clause) # label(goal).  [goal].
+
+============================== end of process non-clausal formulas ===
+
+============================== PROCESS INITIAL CLAUSES ===============
+
+% Clauses before input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+-K | -F.  [clausify(1)].
+-K | H.  [clausify(1)].
+F | -H | J.  [clausify(2)].
+-J | K.  [clausify(3)].
+-F | K.  [deny(4)].
+H | K.  [deny(4)].
+F | -H | -K.  [deny(4)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== PREDICATE ELIMINATION =================
+
+No predicates eliminated.
+
+============================== end predicate elimination =============
+
+Auto_denials:  (non-Horn, no changes).
+
+Term ordering decisions:
+Predicate symbol precedence:  predicate_order([ K, H, F, J ]).
+Function symbol precedence:  function_order([ ]).
+After inverse_order:  (no changes).
+Unfolding symbols: (none).
+
+Auto_inference settings:
+  % set(binary_resolution).  % (non-Horn)
+  % set(neg_ur_resolution).  % (non-Horn, less than 100 clauses)
+
+Auto_process settings:
+  % set(factor).  % (non-Horn)
+  % set(unit_deletion).  % (non-Horn)
+
+kept:      5 -K | -F.  [clausify(1)].
+kept:      6 -K | H.  [clausify(1)].
+kept:      7 F | -H | J.  [clausify(2)].
+kept:      8 -J | K.  [clausify(3)].
+kept:      9 -F | K.  [deny(4)].
+kept:      10 H | K.  [deny(4)].
+kept:      11 F | -H | -K.  [deny(4)].
+
+============================== end of process initial clauses ========
+
+============================== CLAUSES FOR SEARCH ====================
+
+% Clauses after input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+5 -K | -F.  [clausify(1)].
+6 -K | H.  [clausify(1)].
+7 F | -H | J.  [clausify(2)].
+8 -J | K.  [clausify(3)].
+9 -F | K.  [deny(4)].
+10 H | K.  [deny(4)].
+11 F | -H | -K.  [deny(4)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== end of clauses for search =============
+
+============================== SEARCH ================================
+
+% Starting search at 0.01 seconds.
+
+given #1 (I,wt=2): 5 -K | -F.  [clausify(1)].
+
+given #2 (I,wt=2): 6 -K | H.  [clausify(1)].
+
+given #3 (I,wt=3): 7 F | -H | J.  [clausify(2)].
+
+given #4 (I,wt=2): 8 -J | K.  [clausify(3)].
+
+given #5 (I,wt=2): 9 -F | K.  [deny(4)].
+
+given #6 (I,wt=2): 10 H | K.  [deny(4)].
+
+given #7 (I,wt=3): 11 F | -H | -K.  [deny(4)].
+
+given #8 (A,wt=3): 12 K | F | J.  [resolve(10,a,7,b)].
+
+given #9 (T,wt=2): 13 K | F.  [resolve(12,c,8,a),merge(c)].
+-------- Proof 1 --------
+
+============================== PROOF =================================
+
+% Proof 1 at 0.01 (+ 0.00) seconds.
+% Length of proof is 18.
+% Level of proof is 6.
+% Maximum clause weight is 3.000.
+% Given clauses 9.
+
+1 K -> -F & H # label(non_clause).  [assumption].
+2 -F & H -> J # label(non_clause).  [assumption].
+3 J -> K # label(non_clause).  [assumption].
+4 -F & H <-> K # label(non_clause) # label(goal).  [goal].
+5 -K | -F.  [clausify(1)].
+6 -K | H.  [clausify(1)].
+7 F | -H | J.  [clausify(2)].
+8 -J | K.  [clausify(3)].
+9 -F | K.  [deny(4)].
+10 H | K.  [deny(4)].
+11 F | -H | -K.  [deny(4)].
+12 K | F | J.  [resolve(10,a,7,b)].
+13 K | F.  [resolve(12,c,8,a),merge(c)].
+14 K.  [resolve(13,b,9,a),merge(b)].
+15 F | -H.  [back_unit_del(11),unit_del(c,14)].
+16 H.  [back_unit_del(6),unit_del(a,14)].
+17 -F.  [back_unit_del(5),unit_del(a,14)].
+18 $F.  [back_unit_del(15),unit_del(a,17),unit_del(b,16)].
+
+============================== end of proof ==========================
+
+============================== STATISTICS ============================
+
+Given=9. Generated=16. Kept=13. proofs=1.
+Usable=0. Sos=1. Demods=0. Limbo=2, Disabled=17. Hints=0.
+Kept_by_rule=0, Deleted_by_rule=0.
+Forward_subsumed=2. Back_subsumed=6.
+Sos_limit_deleted=0. Sos_displaced=0. Sos_removed=0.
+New_demodulators=0 (0 lex), Back_demodulated=0. Back_unit_deleted=4.
+Demod_attempts=0. Demod_rewrites=0.
+Res_instance_prunes=0. Para_instance_prunes=0. Basic_paramod_prunes=0.
+Nonunit_fsub_feature_tests=0. Nonunit_bsub_feature_tests=16.
+Megabytes=0.04.
+User_CPU=0.01, System_CPU=0.00, Wall_clock=0.
+
+============================== end of statistics =====================
+
+============================== end of search =========================
+
+THEOREM PROVED
+
+THEOREM PROVED
+
+Exiting with 1 proof.
+
+------ process 28049 exit (max_proofs) ------
+
+Process 28049 exit (max_proofs) Sat Sep 26 21:53:41 2015
+
+
+formulas(assumptions).
+
+ % assumption
+K -> (-F & H).
+
+% assumption
+(-F & H) -> J.
+
+% assumption
+J -> K.
+
+end_of_list.
+
+formulas(goals).
+ % goal
+  (-F & H) <-> K.
+end_of_list.

@@ -1,0 +1,205 @@
+============================== Prover9 ===============================
+Prover9 (64) version 2009-11A, November 2009.
+Process 27389 was started by billw on MacBook-Air.local,
+Sat Sep 26 21:44:32 2015
+The command was "/Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f page212d.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file page212d.in
+
+
+formulas(assumptions).
+C | A -> Y & -H.
+L & P.
+A.
+end_of_list.
+
+formulas(goals).
+Y & -H & L.
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 C | A -> Y & -H # label(non_clause).  [assumption].
+2 L & P # label(non_clause).  [assumption].
+3 Y & -H & L # label(non_clause) # label(goal).  [goal].
+
+============================== end of process non-clausal formulas ===
+
+============================== PROCESS INITIAL CLAUSES ===============
+
+% Clauses before input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+-C | Y.  [clausify(1)].
+-C | -H.  [clausify(1)].
+-A | Y.  [clausify(1)].
+-A | -H.  [clausify(1)].
+L.  [clausify(2)].
+P.  [clausify(2)].
+A.  [assumption].
+-Y | H | -L.  [deny(3)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== PREDICATE ELIMINATION =================
+
+No predicates eliminated.
+
+============================== end predicate elimination =============
+
+Auto_denials:
+  % assign(max_proofs, 2).  % (Horn set with more than one neg. clause)
+
+WARNING: denials share constants (see output).
+
+
+WARNING, because some of the denials share constants,
+some of the denials or their descendents may be subsumed,
+preventing the target number of proofs from being found.
+The shared constants are:  H.
+
+Term ordering decisions:
+Predicate symbol precedence:  predicate_order([ Y, A, L, C, H, P ]).
+Function symbol precedence:  function_order([ ]).
+After inverse_order:  (no changes).
+Unfolding symbols: (none).
+
+Auto_inference settings:
+  % set(neg_binary_resolution).  % (HNE depth_diff=0)
+  % clear(ordered_res).  % (HNE depth_diff=0)
+  % set(ur_resolution).  % (HNE depth_diff=0)
+    % set(ur_resolution) -> set(pos_ur_resolution).
+    % set(ur_resolution) -> set(neg_ur_resolution).
+
+Auto_process settings:
+  % set(unit_deletion).  % (Horn set with negative nonunits)
+
+kept:      4 -C | Y.  [clausify(1)].
+kept:      5 -C | -H.  [clausify(1)].
+kept:      6 -A | Y.  [clausify(1)].
+kept:      7 -A | -H.  [clausify(1)].
+kept:      8 L.  [clausify(2)].
+kept:      9 P.  [clausify(2)].
+kept:      10 A.  [assumption].
+           11 -Y | H | -L.  [deny(3)].
+kept:      12 -Y | H.  [copy(11),unit_del(c,8)].
+kept:      13 -H.  [back_unit_del(7),unit_del(a,10)].
+kept:      14 Y.  [back_unit_del(6),unit_del(a,10)].
+-------- Proof 1 --------
+
+============================== PROOF =================================
+
+% Proof 1 at 0.01 (+ 0.00) seconds.
+% Length of proof is 12.
+% Level of proof is 3.
+% Maximum clause weight is 2.000.
+% Given clauses 0.
+
+1 C | A -> Y & -H # label(non_clause).  [assumption].
+2 L & P # label(non_clause).  [assumption].
+3 Y & -H & L # label(non_clause) # label(goal).  [goal].
+6 -A | Y.  [clausify(1)].
+7 -A | -H.  [clausify(1)].
+8 L.  [clausify(2)].
+10 A.  [assumption].
+11 -Y | H | -L.  [deny(3)].
+12 -Y | H.  [copy(11),unit_del(c,8)].
+13 -H.  [back_unit_del(7),unit_del(a,10)].
+14 Y.  [back_unit_del(6),unit_del(a,10)].
+15 $F.  [back_unit_del(12),unit_del(a,14),unit_del(b,13)].
+
+============================== end of proof ==========================
+
+% Disable descendants (x means already disabled):
+ 7x 13
+
+============================== end of process initial clauses ========
+
+============================== CLAUSES FOR SEARCH ====================
+
+% Clauses after input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+8 L.  [clausify(2)].
+9 P.  [clausify(2)].
+10 A.  [assumption].
+14 Y.  [back_unit_del(6),unit_del(a,10)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== end of clauses for search =============
+
+============================== SEARCH ================================
+
+% Starting search at 0.01 seconds.
+
+given #1 (I,wt=1): 8 L.  [clausify(2)].
+
+given #2 (I,wt=1): 9 P.  [clausify(2)].
+
+given #3 (I,wt=1): 10 A.  [assumption].
+
+given #4 (I,wt=1): 14 Y.  [back_unit_del(6),unit_del(a,10)].
+
+============================== STATISTICS ============================
+
+Given=4. Generated=11. Kept=10. proofs=1.
+Usable=4. Sos=0. Demods=0. Limbo=0, Disabled=14. Hints=0.
+Kept_by_rule=0, Deleted_by_rule=0.
+Forward_subsumed=0. Back_subsumed=2.
+Sos_limit_deleted=0. Sos_displaced=0. Sos_removed=0.
+New_demodulators=0 (0 lex), Back_demodulated=0. Back_unit_deleted=3.
+Demod_attempts=0. Demod_rewrites=0.
+Res_instance_prunes=0. Para_instance_prunes=0. Basic_paramod_prunes=0.
+Nonunit_fsub_feature_tests=0. Nonunit_bsub_feature_tests=7.
+Megabytes=0.03.
+User_CPU=0.01, System_CPU=0.00, Wall_clock=0.
+
+============================== end of statistics =====================
+
+============================== end of search =========================
+
+SEARCH FAILED
+
+SEARCH FAILED
+
+Exiting with 1 proof.
+
+------ process 27389 exit (sos_empty) ------
+
+Process 27389 exit (sos_empty) Sat Sep 26 21:44:32 2015
+
+
+formulas(assumptions).
+
+ % assumption
+(C | A) -> (Y & -H).
+
+% assumption
+L & P.
+
+% assumption
+A.
+
+end_of_list.
+
+formulas(goals).
+ % goal
+  (Y & -H) & L.
+end_of_list.

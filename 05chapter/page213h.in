@@ -1,0 +1,50 @@
+MacBook-Air:coq_ide billw$ /Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/github/page213h.in | /Users/billw/Downloads/LADR-2009-11A/bin/prooftrans expand renumber ;
+============================== prooftrans ============================
+Prover9 (64) version 2009-11A, November 2009.
+Process 82959 was started by billw on MacBook-Air.local,
+Sun Sep 27 20:37:44 2015
+The command was "/Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/github/page213h.in".
+============================== end of head ===========================
+
+============================== end of input ==========================
+-------- Proof 1 --------
+
+THEOREM PROVED
+
+------ process 82959 exit (max_proofs) ------
+
+============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 0.01 (+ 0.00) seconds.
+% Length of proof is 6.
+% Level of proof is 2.
+% Maximum clause weight is 2.000.
+% Given clauses 0.
+
+
+1 -(L & E) <-> P # label(non_clause).  [assumption].
+2 L | P # label(non_clause) # label(goal).  [goal].
+3 L | P.  [clausify(1)].
+4 -L.  [deny(2)].
+5 -P.  [deny(2)].
+6 P.  [resolve(4,a,3,a)].
+7 $F.  [resolve(5,a,6,a)].
+
+============================== end of proof ==========================
+
+
+formulas(assumptions).
+
+ % assumption
+-(L & E).
+
+% assumption
+-(L & E) <-> P.
+
+end_of_list.
+
+formulas(goals).
+ % goal
+  L | P.
+end_of_list.

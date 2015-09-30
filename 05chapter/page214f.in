@@ -1,0 +1,51 @@
+============================== end of head ===========================
+
+============================== end of input ==========================
+-------- Proof 1 --------
+
+SEARCH FAILED
+
+------ process 61307 exit (sos_empty) ------
+
+============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 0.01 (+ 0.00) seconds.
+% Length of proof is 11.
+% Level of proof is 3.
+% Maximum clause weight is 2.000.
+% Given clauses 5.
+
+
+1 C <-> A # label(non_clause).  [assumption].
+2 A -> G # label(non_clause).  [assumption].
+3 -(G | U) # label(non_clause).  [assumption].
+4 -C # label(non_clause) # label(goal).  [goal].
+5 -C | A.  [clausify(1)].
+6 -A | G.  [clausify(2)].
+7 -G.  [clausify(3)].
+8 C.  [deny(4)].
+9 -A.  [resolve(7,a,6,b)].
+10 A.  [resolve(5,a,8,a)].
+11 $F.  [resolve(10,a,9,a)].
+
+============================== end of proof ==========================
+
+
+formulas(assumptions).
+
+% assumption
+C <-> A.
+
+% assumption
+A -> G.
+
+% assumption
+-(G | U).
+
+end_of_list.
+
+formulas(goals).
+ % goal
+  -C.
+end_of_list.

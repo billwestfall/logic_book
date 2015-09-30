@@ -1,0 +1,51 @@
+============================== end of head ===========================
+
+============================== end of input ==========================
+-------- Proof 1 --------
+
+THEOREM PROVED
+
+------ process 66014 exit (max_proofs) ------
+
+============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 0.01 (+ 0.00) seconds.
+% Length of proof is 10.
+% Level of proof is 3.
+% Maximum clause weight is 2.000.
+% Given clauses 0.
+
+
+1 A <-> B # label(non_clause).  [assumption].
+2 Q -> A # label(non_clause).  [assumption].
+3 A # label(non_clause) # label(goal).  [goal].
+4 B | Q.  [assumption].
+5 A | -B.  [clausify(1)].
+6 -Q | A.  [clausify(2)].
+7 -A.  [deny(3)].
+8 -Q.  [resolve(7,a,6,b)].
+9 -B.  [resolve(7,a,5,a)].
+10 Q.  [resolve(9,a,4,a)].
+11 $F.  [resolve(8,a,10,a)].
+
+============================== end of proof ==========================
+
+
+formulas(assumptions).
+
+% assumption
+B | Q.
+
+% assumption
+A <-> B.
+
+% assumption
+Q -> A.
+
+end_of_list.
+
+formulas(goals).
+ % goal
+  A.
+end_of_list.

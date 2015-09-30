@@ -1,0 +1,44 @@
+MacBook-Air:~ billw$ /Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/github/page213m.in | /Users/billw/Downloads/LADR-2009-11A/bin/prooftrans expand renumber ;
+============================== prooftrans ============================
+Prover9 (64) version 2009-11A, November 2009.
+Process 49257 was started by billw on MacBook-Air.local,
+Tue Sep 29 17:07:26 2015
+The command was "/Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/github/page213m.in".
+============================== end of head ===========================
+
+============================== end of input ==========================
+-------- Proof 1 --------
+
+THEOREM PROVED
+
+------ process 49257 exit (max_proofs) ------
+
+============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 0.01 (+ 0.01) seconds.
+% Length of proof is 4.
+% Level of proof is 2.
+% Maximum clause weight is 1.000.
+% Given clauses 0.
+
+
+1 C -> (A -> (S -> H)) # label(non_clause) # label(goal).  [goal].
+2 H.  [assumption].
+3 -H.  [deny(1)].
+4 $F.  [resolve(3,a,2,a)].
+
+============================== end of proof ==========================
+
+
+formulas(assumptions).
+
+% assumption
+H.
+
+end_of_list.
+
+formulas(goals).
+ % goal
+  C -> (A -> (S -> H)).
+end_of_list.

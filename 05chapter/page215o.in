@@ -1,0 +1,58 @@
+============================== prooftrans ============================
+Prover9 (64) version 2009-11A, November 2009.
+Process 24357 was started by billw on MacBook-Air.local,
+Wed Sep 30 21:29:45 2015
+The command was "/Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/github/page215o.in".
+============================== end of head ===========================
+
+============================== end of input ==========================
+-------- Proof 1 --------
+
+THEOREM PROVED
+
+------ process 24357 exit (max_proofs) ------
+
+============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 0.01 (+ 0.00) seconds.
+% Length of proof is 15.
+% Level of proof is 6.
+% Maximum clause weight is 3.000.
+% Given clauses 7.
+
+
+1 P <-> Q # label(non_clause).  [assumption].
+2 (R <-> P) <-> (R <-> Q) # label(non_clause) # label(goal).  [goal].
+3 -P | Q.  [clausify(1)].
+4 P | -Q.  [clausify(1)].
+5 -R | P | Q.  [deny(2)].
+6 R | -P | -Q.  [deny(2)].
+7 R | P | Q.  [deny(2)].
+8 -R | -P | -Q.  [deny(2)].
+9 P | Q | P | Q.  [resolve(7,a,5,a)].
+10 P | Q | Q.  [copy(9),merge(c)].
+11 P | Q.  [copy(10),merge(c)].
+12 P | P.  [resolve(11,b,4,b)].
+13 P.  [copy(12),merge(b)].
+14 -R | -Q.  [resolve(13,a,8,b)].
+15 R | -Q.  [resolve(13,a,6,b)].
+16 Q.  [resolve(13,a,3,a)].
+17 R.  [resolve(16,a,15,b)].
+18 -Q.  [resolve(17,a,14,a)].
+19 $F.  [resolve(16,a,18,a)].
+
+============================== end of proof ==========================
+
+
+formulas(assumptions).
+
+% assumption
+P <-> Q.
+
+end_of_list.
+
+formulas(goals).
+ % goal
+    (R <-> P) <-> (R <-> Q).
+end_of_list.

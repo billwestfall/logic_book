@@ -1,0 +1,45 @@
+============================== prooftrans ============================
+Prover9 (64) version 2009-11A, November 2009.
+Process 20906 was started by billw on MacBook-Air.local,
+Wed Sep 30 20:42:10 2015
+The command was "/Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/github/page215b.in".
+============================== end of head ===========================
+
+============================== end of input ==========================
+-------- Proof 1 --------
+
+THEOREM PROVED
+
+------ process 20906 exit (max_proofs) ------
+
+============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 0.01 (+ 0.00) seconds.
+% Length of proof is 5.
+% Level of proof is 2.
+% Maximum clause weight is 1.000.
+% Given clauses 0.
+
+
+1 K # label(non_clause) # label(goal).  [goal].
+2 K | K | K.  [assumption].
+3 K | K.  [copy(2),merge(b)].
+4 K.  [copy(3),merge(b)].
+5 -K.  [deny(1)].
+6 $F.  [resolve(4,a,5,a)].
+
+============================== end of proof ==========================
+
+
+formulas(assumptions).
+
+% assumption
+K | (K | K).
+
+end_of_list.
+
+formulas(goals).
+ % goal
+    K.
+end_of_list.

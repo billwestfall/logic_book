@@ -1,0 +1,55 @@
+============================== end of head ===========================
+
+============================== end of input ==========================
+-------- Proof 1 --------
+
+THEOREM PROVED
+
+------ process 26846 exit (max_proofs) ------
+
+============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 0.01 (+ 0.00) seconds.
+% Length of proof is 14.
+% Level of proof is 5.
+% Maximum clause weight is 3.000.
+% Given clauses 7.
+
+
+1 A | -(-K | C) # label(non_clause).  [assumption].
+2 -(-K | C) -> -A # label(non_clause).  [assumption].
+3 -A <-> -(-K | C) # label(non_clause) # label(goal).  [goal].
+4 A | K.  [clausify(1)].
+5 A | -C.  [clausify(1)].
+6 -K | C | -A.  [clausify(2)].
+7 -A | K.  [deny(3)].
+8 -A | -C.  [deny(3)].
+9 A | -K | C.  [deny(3)].
+10 A | C | A.  [resolve(9,b,4,b)].
+11 A | C.  [copy(10),merge(c)].
+12 A | A.  [resolve(11,b,5,b)].
+13 A.  [copy(12),merge(b)].
+14 -C.  [resolve(13,a,8,a)].
+15 K.  [resolve(13,a,7,a)].
+16 C | -A.  [resolve(15,a,6,a)].
+17 -A.  [resolve(14,a,16,a)].
+18 $F.  [resolve(13,a,17,a)].
+
+============================== end of proof ==========================
+
+
+formulas(assumptions).
+
+% assumption
+A | -(-K | C).
+
+% assumption
+-(-K | C) -> -A.
+
+end_of_list.
+
+formulas(goals).
+ % goal
+    -A <-> -(-K | C).
+end_of_list.

@@ -1,0 +1,57 @@
+============================== end of head ===========================
+
+============================== end of input ==========================
+-------- Proof 1 --------
+
+THEOREM PROVED
+
+------ process 27073 exit (max_proofs) ------
+
+============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 0.01 (+ 0.00) seconds.
+% Length of proof is 15.
+% Level of proof is 4.
+% Maximum clause weight is 3.000.
+% Given clauses 0.
+
+
+1 J & Y -> -A # label(non_clause).  [assumption].
+2 S -> A & -A # label(non_clause).  [assumption].
+3 N -> A & J & Y # label(non_clause).  [assumption].
+4 -S <-> -N # label(non_clause) # label(goal).  [goal].
+5 -J | -Y | -A.  [clausify(1)].
+6 -S.  [clausify(2)].
+7 -N | A.  [clausify(3)].
+8 -N | J.  [clausify(3)].
+9 -N | Y.  [clausify(3)].
+10 S | N.  [deny(4)].
+11 N.  [resolve(6,a,10,a)].
+12 Y.  [resolve(11,a,9,a)].
+13 J.  [resolve(11,a,8,a)].
+14 A.  [resolve(11,a,7,a)].
+15 -Y | -A.  [resolve(13,a,5,a)].
+16 -A.  [resolve(12,a,15,a)].
+17 $F.  [resolve(14,a,16,a)].
+
+============================== end of proof ==========================
+
+
+formulas(assumptions).
+
+% assumption
+(J & Y) -> -A.
+
+% assumption
+S -> (A & -A).
+
+% assumption
+N -> (A & (J & Y)).
+
+end_of_list.
+
+formulas(goals).
+ % goal
+    -S <-> -N.
+end_of_list.

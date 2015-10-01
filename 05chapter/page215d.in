@@ -6,7 +6,7 @@ The command was "/Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/bill
 ============================== end of head ===========================
 
 ============================== end of input ==========================
--------- Proof 1 -------- 
+-------- Proof 1 --------
 
 THEOREM PROVED
 
@@ -36,4 +36,19 @@ THEOREM PROVED
 12 $F.  [resolve(10,a,11,a)].
 
 ============================== end of proof ==========================
-MacBook-Air:~ billw$ 
+
+
+formulas(assumptions).
+
+% assumption
+H -> M.
+
+% assumption
+-H -> -M.
+
+end_of_list.
+
+formulas(goals).
+ % goal
+    H <-> M.
+end_of_list.

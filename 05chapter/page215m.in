@@ -1,0 +1,190 @@
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file /Users/billw/Documents/sage/github/page215m.in
+
+
+formulas(assumptions).
+(L -> X) | B.
+-(L -> X) & -B <-> (J -> E & F).
+end_of_list.
+
+formulas(goals).
+(J -> E & -F) -> Z.
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 (L -> X) | B # label(non_clause).  [assumption].
+2 -(L -> X) & -B <-> (J -> E & F) # label(non_clause).  [assumption].
+3 (J -> E & -F) -> Z # label(non_clause) # label(goal).  [goal].
+
+============================== end of process non-clausal formulas ===
+
+============================== PROCESS INITIAL CLAUSES ===============
+
+% Clauses before input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+-L | X | B.  [clausify(1)].
+-L | X | B | -J | E.  [clausify(2)].
+-L | X | B | -J | F.  [clausify(2)].
+L | J.  [clausify(2)].
+L | -E | -F.  [clausify(2)].
+-X | J.  [clausify(2)].
+-X | -E | -F.  [clausify(2)].
+-B | J.  [clausify(2)].
+-B | -E | -F.  [clausify(2)].
+-J | E.  [deny(3)].
+-J | -F.  [deny(3)].
+-Z.  [deny(3)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== PREDICATE ELIMINATION =================
+
+No predicates eliminated.
+
+============================== end predicate elimination =============
+
+Auto_denials:  (non-Horn, no changes).
+
+Term ordering decisions:
+Predicate symbol precedence:  predicate_order([ J, L, B, X, E, F, Z ]).
+Function symbol precedence:  function_order([ ]).
+After inverse_order:  (no changes).
+Unfolding symbols: (none).
+
+Auto_inference settings:
+  % set(binary_resolution).  % (non-Horn)
+  % set(neg_ur_resolution).  % (non-Horn, less than 100 clauses)
+
+Auto_process settings:
+  % set(factor).  % (non-Horn)
+  % set(unit_deletion).  % (non-Horn)
+
+kept:      4 -L | X | B.  [clausify(1)].
+kept:      5 L | J.  [clausify(2)].
+kept:      6 L | -E | -F.  [clausify(2)].
+kept:      7 -X | J.  [clausify(2)].
+kept:      8 -X | -E | -F.  [clausify(2)].
+kept:      9 -B | J.  [clausify(2)].
+kept:      10 -B | -E | -F.  [clausify(2)].
+kept:      11 -J | E.  [deny(3)].
+kept:      12 -J | -F.  [deny(3)].
+kept:      13 -Z.  [deny(3)].
+
+============================== end of process initial clauses ========
+
+============================== CLAUSES FOR SEARCH ====================
+
+% Clauses after input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+4 -L | X | B.  [clausify(1)].
+5 L | J.  [clausify(2)].
+6 L | -E | -F.  [clausify(2)].
+7 -X | J.  [clausify(2)].
+8 -X | -E | -F.  [clausify(2)].
+9 -B | J.  [clausify(2)].
+10 -B | -E | -F.  [clausify(2)].
+11 -J | E.  [deny(3)].
+12 -J | -F.  [deny(3)].
+13 -Z.  [deny(3)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== end of clauses for search =============
+
+============================== SEARCH ================================
+
+% Starting search at 0.01 seconds.
+
+given #1 (I,wt=3): 4 -L | X | B.  [clausify(1)].
+
+given #2 (I,wt=2): 5 L | J.  [clausify(2)].
+
+given #3 (I,wt=3): 6 L | -E | -F.  [clausify(2)].
+
+given #4 (I,wt=2): 7 -X | J.  [clausify(2)].
+
+given #5 (I,wt=3): 8 -X | -E | -F.  [clausify(2)].
+
+given #6 (I,wt=2): 9 -B | J.  [clausify(2)].
+
+given #7 (I,wt=3): 10 -B | -E | -F.  [clausify(2)].
+
+given #8 (I,wt=2): 11 -J | E.  [deny(3)].
+
+given #9 (I,wt=2): 12 -J | -F.  [deny(3)].
+
+given #10 (I,wt=1): 13 -Z.  [deny(3)].
+
+given #11 (A,wt=3): 14 J | X | B.  [resolve(5,a,4,a)].
+
+given #12 (T,wt=2): 15 J | B.  [resolve(14,b,7,a),merge(c)].
+
+given #13 (T,wt=1): 16 J.  [resolve(15,b,9,a),merge(b)].
+
+given #14 (T,wt=1): 18 E.  [back_unit_del(11),unit_del(a,16)].
+
+given #15 (A,wt=1): 17 -F.  [back_unit_del(12),unit_del(a,16)].
+
+============================== STATISTICS ============================
+
+Given=15. Generated=17. Kept=15. proofs=0.
+Usable=5. Sos=0. Demods=0. Limbo=0, Disabled=22. Hints=0.
+Kept_by_rule=0, Deleted_by_rule=0.
+Forward_subsumed=2. Back_subsumed=8.
+Sos_limit_deleted=0. Sos_displaced=0. Sos_removed=0.
+New_demodulators=0 (0 lex), Back_demodulated=0. Back_unit_deleted=2.
+Demod_attempts=0. Demod_rewrites=0.
+Res_instance_prunes=0. Para_instance_prunes=0. Basic_paramod_prunes=0.
+Nonunit_fsub_feature_tests=2. Nonunit_bsub_feature_tests=19.
+Megabytes=0.04.
+User_CPU=0.01, System_CPU=0.00, Wall_clock=0.
+
+============================== end of statistics =====================
+
+============================== end of search =========================
+
+SEARCH FAILED
+
+SEARCH FAILED
+
+Exiting with failure.
+
+------ process 23620 exit (sos_empty) ------
+
+Process 23620 exit (sos_empty) Wed Sep 30 21:19:11 2015
+
+
+formulas(assumptions).
+
+% assumption
+(L -> X) | B.
+
+% assumption
+(-(L -> X) & -B) <-> (J -> (E & F)).
+
+
+end_of_list.
+
+formulas(goals).
+ % goal
+    (J -> (E & -F)) -> Z.
+end_of_list.

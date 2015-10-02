@@ -1,0 +1,61 @@
+
+
+f = propcalc.formula("(((a->b)&(a->~b))&((c->a)&(~c->a)))")
+print f
+print f.truthtable()
+print ("Satisfiable?:")
+print f.is_satisfiable()
+print ("Tautology?:")
+print f.is_tautology()
+print ("Contradiction?:")
+print f.is_contradiction()
+print ("Consistent?:")
+print propcalc.consistent(f)
+
+f = propcalc.formula("((b<->(a&~a))&(~b->(a&~a)))")
+print f
+print f.truthtable()
+print ("Satisfiable?:")
+print f.is_satisfiable()
+print ("Tautology?:")
+print f.is_tautology()
+print ("Contradiction?:")
+print f.is_contradiction()
+print ("Consistent?:")
+print propcalc.consistent(f)
+
+f = propcalc.formula("((w|(z->y))&(~y&~(w|~z)))")
+print f
+print f.truthtable()
+print ("Satisfiable?:")
+print f.is_satisfiable()
+print ("Tautology?:")
+print f.is_tautology()
+print ("Contradiction?:")
+print f.is_contradiction()
+print ("Consistent?:")
+print propcalc.consistent(f)
+
+f = propcalc.formula("((a&(b|c))&((~c|h)&(h->~h))&(~b))")
+print f
+print f.truthtable()
+print ("Satisfiable?:")
+print f.is_satisfiable()
+print ("Tautology?:")
+print f.is_tautology()
+print ("Contradiction?:")
+print f.is_contradiction()
+print ("Consistent?:")
+print propcalc.consistent(f)
+
+f = propcalc.formula("(((a<->b)<->(d&~d))<->b)&a")
+print f
+print f.truthtable()
+print ("Satisfiable?:")
+print f.is_satisfiable()
+print ("Tautology?:")
+print f.is_tautology()
+print ("Contradiction?:")
+print f.is_contradiction()
+print ("Consistent?:")
+print propcalc.consistent(f)

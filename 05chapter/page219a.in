@@ -1,0 +1,26 @@
+============================== prooftrans ============================
+Prover9 (64) version 2009-11A, November 2009.
+Process 7458 was started by billw on MacBook-Air.local,
+Thu Oct  1 18:00:21 2015
+The command was "/Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/github/page219a.in".
+============================== end of head ===========================
+
+============================== end of input ==========================
+
+SEARCH FAILED
+
+------ process 7458 exit (sos_empty) ------
+MacBook-Air:github billw$
+
+
+formulas(assumptions).
+
+% assumption
+P -> Q.
+
+end_of_list.
+
+formulas(goals).
+ % goal
+    -P.
+end_of_list.

@@ -1,0 +1,53 @@
+============================== end of head ===========================
+
+============================== end of input ==========================
+-------- Proof 1 --------
+
+THEOREM PROVED
+
+------ process 11471 exit (max_proofs) ------
+
+============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 0.01 (+ 0.00) seconds.
+% Length of proof is 13.
+% Level of proof is 4.
+% Maximum clause weight is 4.000.
+% Given clauses 5.
+
+
+1 D | B | (E -> -C) # label(non_clause).  [assumption].
+2 -B & -D & (-E -> C) # label(non_clause).  [assumption].
+3 -C <-> E # label(non_clause) # label(goal).  [goal].
+4 D | B | -E | -C.  [clausify(1)].
+5 -B.  [clausify(2)].
+6 -D.  [clausify(2)].
+7 E | C.  [clausify(2)].
+8 -C | E.  [deny(3)].
+9 C | -E.  [deny(3)].
+10 B | -E | -C.  [resolve(6,a,4,a)].
+11 -E | -C.  [resolve(5,a,10,a)].
+12 C | C.  [resolve(9,b,7,a)].
+13 C.  [copy(12),merge(b)].
+14 -E.  [resolve(13,a,11,b)].
+15 E.  [resolve(13,a,8,a)].
+16 $F.  [resolve(14,a,15,a)].
+
+============================== end of proof ==========================
+
+
+formulas(assumptions).
+
+% assumption
+(D | B) | (E -> -C).
+
+% assumption
+-B & (-D & (-E -> C)).
+
+end_of_list.
+
+formulas(goals).
+ % goal
+    -C <-> E.
+end_of_list.

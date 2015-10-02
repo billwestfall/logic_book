@@ -1,0 +1,53 @@
+============================== prooftrans ============================
+Prover9 (64) version 2009-11A, November 2009.
+Process 15087 was started by billw on MacBook-Air.local,
+Thu Oct  1 19:44:15 2015
+The command was "/Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/github/page227i.in".
+============================== end of head ===========================
+
+============================== end of input ==========================
+-------- Proof 1 --------
+
+THEOREM PROVED
+
+------ process 15087 exit (max_proofs) ------
+
+============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 0.01 (+ 0.00) seconds.
+% Length of proof is 9.
+% Level of proof is 3.
+% Maximum clause weight is 3.000.
+% Given clauses 0.
+
+
+1 F & G | H & -I # label(non_clause).  [assumption].
+2 I -> -(F & D) # label(non_clause).  [assumption].
+3 I -> -D # label(non_clause) # label(goal).  [goal].
+4 F | -I.  [clausify(1)].
+5 -I | -F | -D.  [clausify(2)].
+6 I.  [deny(3)].
+7 D.  [deny(3)].
+8 -F | -D.  [resolve(6,a,5,a)].
+9 -F.  [resolve(7,a,8,b)].
+10 -I.  [resolve(9,a,4,a)].
+11 $F.  [resolve(6,a,10,a)].
+
+============================== end of proof ==========================
+
+
+formulas(assumptions).
+
+% assumption
+(F & G) | (H & -I).
+
+% assumption
+I -> -(F & D).
+
+end_of_list.
+
+formulas(goals).
+ % goal
+    I -> -D.
+end_of_list.

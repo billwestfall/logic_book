@@ -1,0 +1,35 @@
+============================== end of head ===========================
+
+============================== end of input ==========================
+-------- Proof 1 -------- 
+
+THEOREM PROVED
+
+------ process 13349 exit (max_proofs) ------
+
+============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 0.01 (+ 0.01) seconds.
+% Length of proof is 12.
+% Level of proof is 4.
+% Maximum clause weight is 2.000.
+% Given clauses 0.
+
+
+1 D -> E # label(non_clause).  [assumption].
+2 E -> Z & W # label(non_clause).  [assumption].
+3 -D # label(non_clause) # label(goal).  [goal].
+4 -D | E.  [clausify(1)].
+5 -E | Z.  [clausify(2)].
+6 -E | W.  [clausify(2)].
+7 -Z | -W.  [assumption].
+8 D.  [deny(3)].
+9 E.  [resolve(8,a,4,a)].
+10 W.  [resolve(9,a,6,a)].
+11 Z.  [resolve(9,a,5,a)].
+12 -W.  [resolve(11,a,7,a)].
+13 $F.  [resolve(10,a,12,a)].
+
+============================== end of proof ==========================
+MacBook-Air:github billw$ 

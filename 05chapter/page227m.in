@@ -1,0 +1,59 @@
+Prover9 (64) version 2009-11A, November 2009.
+Process 15851 was started by billw on MacBook-Air.local,
+Thu Oct  1 19:54:22 2015
+The command was "/Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/github/page227m.in".
+============================== end of head ===========================
+
+============================== end of input ==========================
+-------- Proof 1 --------
+
+THEOREM PROVED
+
+------ process 15851 exit (max_proofs) ------
+
+============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 0.01 (+ 0.00) seconds.
+% Length of proof is 13.
+% Level of proof is 4.
+% Maximum clause weight is 2.000.
+% Given clauses 4.
+
+
+1 X & Z & Y | (-X -> -Y) # label(non_clause).  [assumption].
+2 X -> Z # label(non_clause).  [assumption].
+3 Z -> Y # label(non_clause).  [assumption].
+4 X <-> Y # label(non_clause) # label(goal).  [goal].
+5 X | -Y.  [clausify(1)].
+6 -X | Z.  [clausify(2)].
+7 -Z | Y.  [clausify(3)].
+8 X | Y.  [deny(4)].
+9 -X | -Y.  [deny(4)].
+10 X | X.  [resolve(8,b,5,b)].
+11 X.  [copy(10),merge(b)].
+12 -Y.  [resolve(11,a,9,a)].
+13 Z.  [resolve(11,a,6,a)].
+14 Y.  [resolve(13,a,7,a)].
+15 $F.  [resolve(12,a,14,a)].
+
+============================== end of proof ==========================
+
+
+formulas(assumptions).
+
+% assumption
+((X & Z) & Y) | (-X -> -Y).
+
+% assumption
+X -> Z.
+
+% assumption
+Z -> Y.
+
+end_of_list.
+
+formulas(goals).
+ % goal
+    X <-> Y.
+end_of_list.

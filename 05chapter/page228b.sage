@@ -24,7 +24,7 @@ print f.is_contradiction()
 print ("Consistent?:")
 print propcalc.consistent(f)
 
-f = propcalc.formula("((m&l)&((l&(m&~s))->k)&(~k|s)&~(k<->~s)")
+f = propcalc.formula("((m&l)&((l&(m&~s))->k)&(~k|s)&~(k<->~s))")
 print f
 print f.truthtable()
 print ("Satisfiable?:")

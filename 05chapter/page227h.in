@@ -1,0 +1,52 @@
+============================== prooftrans ============================
+Prover9 (64) version 2009-11A, November 2009.
+Process 14900 was started by billw on MacBook-Air.local,
+Thu Oct  1 19:41:33 2015
+The command was "/Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/github/page227h.in".
+============================== end of head ===========================
+
+============================== end of input ==========================
+-------- Proof 1 --------
+
+SEARCH FAILED
+
+------ process 14900 exit (sos_empty) ------
+
+============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 0.01 (+ 0.00) seconds.
+% Length of proof is 9.
+% Level of proof is 3.
+% Maximum clause weight is 2.000.
+% Given clauses 0.
+
+
+1 -A & -B | -A & -C # label(non_clause).  [assumption].
+2 E & D -> A # label(non_clause).  [assumption].
+3 -E | -D # label(non_clause) # label(goal).  [goal].
+4 -A.  [clausify(1)].
+5 -E | -D | A.  [clausify(2)].
+6 -E | -D.  [resolve(4,a,5,c)].
+7 E.  [deny(3)].
+8 D.  [deny(3)].
+9 -D.  [resolve(7,a,6,a)].
+10 $F.  [resolve(8,a,9,a)].
+
+============================== end of proof ==========================
+
+
+formulas(assumptions).
+
+% assumption
+(-A & -B) | (-A & -C).
+
+% assumption
+(E & D) -> A.
+
+end_of_list.
+
+formulas(goals).
+ % goal
+    -E | -D.
+end_of_list.

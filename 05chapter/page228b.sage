@@ -1,3 +1,144 @@
+# sage: load ("page228b.sage")
+# (((e&f)|~~g)->m)&(~(((g|e)&(f|g))->(m&m)))
+# e      f      g      m      value
+# False  False  False  False  False
+# False  False  False  True   False
+# False  False  True   False  False
+# False  False  True   True   False
+# False  True   False  False  False
+# False  True   False  True   False
+# False  True   True   False  False
+# False  True   True   True   False
+# True   False  False  False  False
+# True   False  False  True   False  
+# True   False  True   False  False
+# True   False  True   True   False
+# True   True   False  False  False
+# True   True   False  True   False
+# True   True   True   False  False
+# True   True   True   True   False
+#
+# Satisfiable?:
+# False
+# Tautology?:
+# False
+# Contradiction?:
+# True
+# Consistent?:
+# False
+# (~((~c|~~c)|~~c))
+# c      value
+# False  False
+# True   False
+#
+# Satisfiable?:
+# False
+# Tautology?:
+# False
+# Contradiction?:
+# True
+# Consistent?:
+# False
+# ((m&l)&((l&(m&~s))->k)&(~k|s)&~(k<->~s))
+# m      l      s      k      value
+# False  False  False  False  False
+# False  False  False  True   False
+# False  False  True   False  False
+# False  False  True   True   False
+# False  True   False  False  False
+# False  True   False  True   False
+# False  True   True   False  False
+# False  True   True   True   False
+# True   False  False  False  False
+# True   False  False  True   False
+# True   False  True   False  False
+# True   False  True   True   False
+# True   True   False  False  False
+# True   True   False  True   False
+# True   True   True   False  False
+# True   True   True   True   True
+#
+# Satisfiable?:
+# True
+# Tautology?:
+# False
+# Contradiction?:
+# False
+# Consistent?:
+# True
+# (b&(h|z))&(~z->k)&((b<->z)->~z)&(~k)
+# b      h      z      k      value
+# False  False  False  False  False
+# False  False  False  True   False
+# False  False  True   False  False
+# False  False  True   True   False
+# False  True   False  False  False
+# False  True   False  True   False
+# False  True   True   False  False
+# False  True   True   True   False
+# True   False  False  False  False
+# True   False  False  True   False
+# True   False  True   False  False
+# True   False  True   True   False
+# True   True   False  False  False
+# True   True   False  True   False
+# True   True   True   False  False
+# True   True   True   True   False
+#
+# Satisfiable?:
+# False
+# Tautology?:
+# False
+# Contradiction?:
+# True
+# Consistent?:
+# False
+# (~(w&(z|y)))&((z->y)->z)&((y->z)->w)
+# w      z      y      value
+# False  False  False  False
+# False  False  True   False
+# False  True   False  False
+# False  True   True   False
+# True   False  False  False
+# True   False  True   False
+# True   True   False  False
+# True   True   True   False
+#
+# Satisfiable?:
+# False
+# Tautology?:
+# False
+# Contradiction?:
+# True
+# Consistent?:
+# False
+# (((f->g)|(~f->g))->h)&((a&h)->~a)&(a|~h)
+# f      g      h      a      value
+# False  False  False  False  False
+# False  False  False  True   False
+# False  False  True   False  False
+# False  False  True   True   False
+# False  True   False  False  False
+# False  True   False  True   False
+# False  True   True   False  False
+# False  True   True   True   False
+# True   False  False  False  False
+# True   False  False  True   False
+# True   False  True   False  False
+# True   False  True   True   False
+# True   True   False  False  False
+# True   True   False  True   False
+# True   True   True   False  False
+# True   True   True   True   False
+#
+# Satisfiable?:
+# False
+# Tautology?:
+# False
+# Contradiction?:
+# True
+# Consistent?:
+# False
 
 
 f = propcalc.formula("(((e&f)|~~g)->m)&(~(((g|e)&(f|g))->(m&m)))")

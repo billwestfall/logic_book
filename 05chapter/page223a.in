@@ -1,0 +1,61 @@
+============================== end of head ===========================
+
+============================== end of input ==========================
+-------- Proof 1 --------
+
+THEOREM PROVED
+
+------ process 11248 exit (max_proofs) ------
+
+============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 0.01 (+ 0.00) seconds.
+% Length of proof is 16.
+% Level of proof is 3.
+% Maximum clause weight is 4.000.
+% Given clauses 0.
+
+
+1 J -> K | L | H # label(non_clause).  [assumption].
+2 K | L | H -> M | G | I # label(non_clause).  [assumption].
+3 J -> M | G | I # label(non_clause) # label(goal).  [goal].
+4 -J | K | L | H.  [clausify(1)].
+5 -K | M | G | I.  [clausify(2)].
+6 -L | M | G | I.  [clausify(2)].
+7 -H | M | G | I.  [clausify(2)].
+8 J.  [deny(3)].
+9 -M.  [deny(3)].
+10 -G.  [deny(3)].
+11 -I.  [deny(3)].
+12 K | L | H.  [resolve(8,a,4,a)].
+13 -H | G | I.  [resolve(9,a,7,b)].
+14 -H | I.  [resolve(10,a,13,b)].
+15 -H.  [resolve(11,a,14,b)].
+16 -L | G | I.  [resolve(9,a,6,b)].
+17 -L | I.  [resolve(10,a,16,b)].
+18 -L.  [resolve(11,a,17,b)].
+19 -K | G | I.  [resolve(9,a,5,b)].
+20 -K | I.  [resolve(10,a,19,b)].
+21 -K.  [resolve(11,a,20,b)].
+22 L | H.  [resolve(21,a,12,a)].
+23 H.  [resolve(18,a,22,a)].
+24 $F.  [resolve(15,a,23,a)].
+
+============================== end of proof ==========================
+
+
+formulas(assumptions).
+
+% assumption
+J -> (K | (L | H)).
+
+% assumption
+((K | L) | H) -> ((M | G) | I).
+
+end_of_list.
+
+formulas(goals).
+ % goal
+    J -> (M | (G | I)).
+end_of_list.

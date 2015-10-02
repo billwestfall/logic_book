@@ -1,0 +1,55 @@
+============================== prooftrans ============================
+Prover9 (64) version 2009-11A, November 2009.
+Process 14030 was started by billw on MacBook-Air.local,
+Thu Oct  1 19:30:02 2015
+The command was "/Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/github/page227d.in".
+============================== end of head ===========================
+
+============================== end of input ==========================
+-------- Proof 1 --------
+
+THEOREM PROVED
+
+------ process 14030 exit (max_proofs) ------
+
+============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 0.01 (+ 0.00) seconds.
+% Length of proof is 12.
+% Level of proof is 3.
+% Maximum clause weight is 3.000.
+% Given clauses 0.
+
+
+1 K & J | I | -Y # label(non_clause).  [assumption].
+2 Y & (I | K -> F) # label(non_clause).  [assumption].
+3 F | N # label(non_clause) # label(goal).  [goal].
+4 K | I | -Y.  [clausify(1)].
+5 Y.  [clausify(2)].
+6 -I | F.  [clausify(2)].
+7 -K | F.  [clausify(2)].
+8 -F.  [deny(3)].
+9 K | I.  [resolve(5,a,4,c)].
+10 -K.  [resolve(8,a,7,b)].
+11 -I.  [resolve(8,a,6,b)].
+12 I.  [resolve(10,a,9,a)].
+13 $F.  [resolve(11,a,12,a)].
+
+============================== end of proof ==========================
+
+
+formulas(assumptions).
+
+% assumption
+((K & J) | I) | -Y.
+
+% assumption
+Y & ((I | K) -> F).
+
+end_of_list.
+
+formulas(goals).
+ % goal
+    F | N.
+end_of_list.

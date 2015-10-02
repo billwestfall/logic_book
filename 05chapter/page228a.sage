@@ -1,3 +1,29 @@
+# sage: load ("page228a.sage")
+# a|b
+# ~(~a&~b)
+# Equivalent?:
+# True
+# a&(b|c)
+# (b&a)|(c&a)
+# Equivalent?:
+# True
+# (a&b)->c
+# (~(a->c))->~b
+# Equivalent?:
+# True
+# (a|b)|c
+# ~a->(~b->c)
+# Equivalent?:
+# True
+# a|(b<->c)
+# a|(~b<->~c)
+# Equivalent?:
+# True
+# (a&b)|((c&d)|a)
+# (c|a)&(c|b)&((d|a)&(d|b))|a
+# Equivalent?:
+# True
+
 
 f = propcalc.formula("a|b")
 print (f)

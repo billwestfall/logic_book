@@ -1,4 +1,4 @@
 
-x = Set([1,2,3])
+x = Set([A->B,C->D])
 print x
 print list(x.subsets())

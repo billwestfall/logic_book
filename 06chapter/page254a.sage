@@ -1,16 +1,17 @@
-
-
-print ("1=A->B")
-print ("2=C->D")
-x = Set([1,2])
+a = "A->B"
+b = "C->D"
+print a
+print b
+x = Set([a,b])
 print x
 print list(x.subsets())
 
-y = "C|~D"
-print ("1=C|~D")
-print ("2=~D|C")
-print ("3=C|C")
-x = Set([y,2,3])
+a = "C|~D"
+b = "~D|C"
+c = "C|C"
+print a
+print b
+print c
+x = Set([a,b,c])
 print x
 print list(x.subsets())
-

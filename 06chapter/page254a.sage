@@ -1,3 +1,24 @@
+# sage: load ("page254a.sage")
+# A->B
+# C->D
+# {'A->B', 'C->D'}
+# Subsets:
+# [{}, {'A->B'}, {'C->D'}, {'A->B', 'C->D'}]
+# C|~D
+# ~D|C
+# C|C
+# {'C|~D', '~D|C', 'C|C'}
+# Subsets:
+# [{}, {'C|~D'}, {'~D|C'}, {'C|C'}, {'C|~D', '~D|C'}, {'C|~D', 'C|C'}, {'~D|C', 'C|C'}, {'C|~D', '~D|C', 'C|C'}]
+# (B&A)<->K
+# {'(B&A)<->K'}
+# Subsets:
+# [{}, {'(B&A)<->K'}]
+#
+# {''}
+# Subsets:
+# [{}, {''}]
+
 a = "A->B"
 b = "C->D"
 print a

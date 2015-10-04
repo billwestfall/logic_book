@@ -1,0 +1,23 @@
+============================== end of head ===========================
+
+============================== end of input ==========================
+
+SEARCH FAILED
+
+------ process 27320 exit (sos_empty) ------
+
+
+formulas(assumptions).
+
+% assumption
+N.
+
+% assumption
+S & B.
+
+end_of_list.
+
+formulas(goals).
+ % goal
+    -F.
+end_of_list.

@@ -1,0 +1,48 @@
+============================== prooftrans ============================
+Prover9 (64) version 2009-11A, November 2009.
+Process 89867 was started by billw on MacBook-Air.local,
+Sat Oct  3 17:02:45 2015
+The command was "/Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/github/page255a.in".
+============================== end of head ===========================
+
+============================== end of input ==========================
+-------- Proof 1 --------
+
+THEOREM PROVED
+
+------ process 89867 exit (max_proofs) ------
+
+============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 0.01 (+ 0.01) seconds.
+% Length of proof is 6.
+% Level of proof is 3.
+% Maximum clause weight is 2.000.
+% Given clauses 3.
+
+
+1 -(P <-> Q) # label(non_clause) # label(goal).  [goal].
+2 P.  [assumption].
+3 -Q.  [assumption].
+4 -P | Q.  [deny(1)].
+5 -P.  [resolve(4,b,3,a)].
+6 $F.  [resolve(5,a,2,a)].
+
+============================== end of proof ==========================
+
+
+formulas(assumptions).
+
+% assumption
+P.
+
+% assumption
+-Q.
+
+end_of_list.
+
+formulas(goals).
+ % goal
+    -(P<->Q).
+end_of_list.

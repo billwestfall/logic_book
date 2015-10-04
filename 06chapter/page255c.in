@@ -1,0 +1,21 @@
+============================== end of head ===========================
+
+============================== end of input ==========================
+
+SEARCH FAILED
+
+------ process 90197 exit (sos_empty) ------
+
+
+formulas(assumptions).
+
+% assumption
+P | Q.
+
+
+end_of_list.
+
+formulas(goals).
+ % goal
+    P.
+end_of_list.

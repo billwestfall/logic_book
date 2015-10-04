@@ -1,0 +1,20 @@
+============================== end of head ===========================
+
+============================== end of input ==========================
+
+SEARCH FAILED
+
+------ process 90009 exit (sos_empty) ------
+
+formulas(assumptions).
+
+% assumption
+-Q.
+
+
+end_of_list.
+
+formulas(goals).
+ % goal
+    -(P->Q).
+end_of_list.

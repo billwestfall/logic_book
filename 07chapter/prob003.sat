@@ -1,0 +1,25 @@
+p cnf 1 3
+ 1 -1 0
+ -1 -1 0
+ 1 1 0
+ 
+ 
+MacBook-Air:examples billw$ minisat prob03.sat 
+============================[ Problem Statistics ]=============================
+|                                                                             |
+|  Number of variables:             1                                         |
+|  Number of clauses:               0                                         |
+|  Parse time:                   0.00 s                                       |
+|  Simplification time:          0.00 s                                       |
+|                                                                             |
+===============================================================================
+Solved by simplification
+restarts              : 0
+conflicts             : 0              (0 /sec)
+decisions             : 0              ( nan % random) (0 /sec)
+propagations          : 1              (581 /sec)
+conflict literals     : 0              ( nan % deleted)
+Memory used           : 4.36 MB
+CPU time              : 0.00172 s
+
+UNSATISFIABLE

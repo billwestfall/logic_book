@@ -1,0 +1,27 @@
+p cnf 1 2
+ 1 -1 0
+ -1 -1 0
+ 
+MacBook-Air:examples billw$ minisat prob04.sat 
+============================[ Problem Statistics ]=============================
+|                                                                             |
+|  Number of variables:             1                                         |
+|  Number of clauses:               0                                         |
+|  Parse time:                   0.00 s                                       |
+|  Simplification time:          0.00 s                                       |
+|                                                                             |
+============================[ Search Statistics ]==============================
+| Conflicts |          ORIGINAL         |          LEARNT          | Progress |
+|           |    Vars  Clauses Literals |    Limit  Clauses Lit/Cl |          |
+===============================================================================
+===============================================================================
+restarts              : 1
+conflicts             : 0              (0 /sec)
+decisions             : 1              (0.00 % random) (565 /sec)
+propagations          : 1              (565 /sec)
+conflict literals     : 0              ( nan % deleted)
+Memory used           : 0.10 MB
+CPU time              : 0.001771 s
+
+SATISFIABLE
+MacBook-Air:examples billw$ 

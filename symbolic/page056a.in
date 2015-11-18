@@ -2,8 +2,8 @@
 MacBook-Air:~ billw$ /Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/logic_book/symbolic/page056a.in
 ============================== Prover9 ===============================
 Prover9 (64) version 2009-11A, November 2009.
-Process 70862 was started by billw on MacBook-Air.local,
-Tue Nov 17 18:55:28 2015
+Process 74770 was started by billw on MacBook-Air.local,
+Tue Nov 17 21:04:05 2015
 The command was "/Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/logic_book/symbolic/page056a.in".
 ============================== end of head ===========================
 
@@ -13,12 +13,12 @@ The command was "/Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/bill
 
 
 formulas(assumptions).
--X -> M.
--Y -> -M.
+-(X -> M).
+-(Y -> -M).
 end_of_list.
 
 formulas(goals).
--X -> Y.
+-(X -> Y).
 end_of_list.
 
 ============================== end of input ==========================
@@ -26,9 +26,9 @@ end_of_list.
 ============================== PROCESS NON-CLAUSAL FORMULAS ==========
 
 % Formulas that are not ordinary clauses:
-1 -X -> M # label(non_clause).  [assumption].
-2 -Y -> -M # label(non_clause).  [assumption].
-3 -X -> Y # label(non_clause) # label(goal).  [goal].
+1 -(X -> M) # label(non_clause).  [assumption].
+2 -(Y -> -M) # label(non_clause).  [assumption].
+3 -(X -> Y) # label(non_clause) # label(goal).  [goal].
 
 ============================== end of process non-clausal formulas ===
 
@@ -40,10 +40,11 @@ formulas(usable).
 end_of_list.
 
 formulas(sos).
-X | M.  [clausify(1)].
-Y | -M.  [clausify(2)].
--X.  [deny(3)].
--Y.  [deny(3)].
+X.  [clausify(1)].
+-M.  [clausify(1)].
+Y.  [clausify(2)].
+M.  [clausify(2)].
+-X | Y.  [deny(3)].
 end_of_list.
 
 formulas(demodulators).
@@ -55,62 +56,58 @@ No predicates eliminated.
 
 ============================== end predicate elimination =============
 
-Auto_denials:  (non-Horn, no changes).
+Auto_denials:  (no changes).
 
 Term ordering decisions:
-Predicate symbol precedence:  predicate_order([ M, X, Y ]).
+Predicate symbol precedence:  predicate_order([ X, Y, M ]).
 Function symbol precedence:  function_order([ ]).
 After inverse_order:  (no changes).
 Unfolding symbols: (none).
 
 Auto_inference settings:
-  % set(binary_resolution).  % (non-Horn)
-  % set(neg_ur_resolution).  % (non-Horn, less than 100 clauses)
+  % set(neg_binary_resolution).  % (HNE depth_diff=0)
+  % clear(ordered_res).  % (HNE depth_diff=0)
+  % set(ur_resolution).  % (HNE depth_diff=0)
+    % set(ur_resolution) -> set(pos_ur_resolution).
+    % set(ur_resolution) -> set(neg_ur_resolution).
 
-Auto_process settings:
-  % set(factor).  % (non-Horn)
-  % set(unit_deletion).  % (non-Horn)
+Auto_process settings:  (no changes).
 
-kept:      4 X | M.  [clausify(1)].
-kept:      5 Y | -M.  [clausify(2)].
-kept:      6 -X.  [deny(3)].
-kept:      7 -Y.  [deny(3)].
-kept:      8 M.  [back_unit_del(4),unit_del(a,6)].
+kept:      4 X.  [clausify(1)].
+kept:      5 -M.  [clausify(1)].
+kept:      6 Y.  [clausify(2)].
+kept:      7 M.  [clausify(2)].
 -------- Proof 1 --------
 
 ============================== PROOF =================================
 
-% Proof 1 at 0.01 (+ 0.00) seconds.
-% Length of proof is 9.
-% Level of proof is 3.
-% Maximum clause weight is 2.000.
+% Proof 1 at 0.01 (+ 0.01) seconds.
+% Length of proof is 5.
+% Level of proof is 2.
+% Maximum clause weight is 1.000.
 % Given clauses 0.
 
-1 -X -> M # label(non_clause).  [assumption].
-2 -Y -> -M # label(non_clause).  [assumption].
-3 -X -> Y # label(non_clause) # label(goal).  [goal].
-4 X | M.  [clausify(1)].
-5 Y | -M.  [clausify(2)].
-6 -X.  [deny(3)].
-7 -Y.  [deny(3)].
-8 M.  [back_unit_del(4),unit_del(a,6)].
-9 $F.  [back_unit_del(5),unit_del(a,7),unit_del(b,8)].
+1 -(X -> M) # label(non_clause).  [assumption].
+2 -(Y -> -M) # label(non_clause).  [assumption].
+5 -M.  [clausify(1)].
+7 M.  [clausify(2)].
+8 $F.  [resolve(7,a,5,a)].
 
 ============================== end of proof ==========================
 
 ============================== STATISTICS ============================
 
-Given=0. Generated=6. Kept=5. proofs=1.
-Usable=0. Sos=1. Demods=0. Limbo=2, Disabled=6. Hints=0.
+Given=0. Generated=4. Kept=4. proofs=1.
+Usable=0. Sos=0. Demods=0. Limbo=3, Disabled=4. Hints=0.
 Kept_by_rule=0, Deleted_by_rule=0.
 Forward_subsumed=0. Back_subsumed=0.
 Sos_limit_deleted=0. Sos_displaced=0. Sos_removed=0.
-New_demodulators=0 (0 lex), Back_demodulated=0. Back_unit_deleted=2.
+New_demodulators=0 (0 lex), Back_demodulated=0. Back_unit_deleted=0.
 Demod_attempts=0. Demod_rewrites=0.
 Res_instance_prunes=0. Para_instance_prunes=0. Basic_paramod_prunes=0.
-Nonunit_fsub_feature_tests=0. Nonunit_bsub_feature_tests=2.
+Nonunit_fsub_feature_tests=0. Nonunit_bsub_feature_tests=0.
 Megabytes=0.02.
-User_CPU=0.01, System_CPU=0.00, Wall_clock=0.
+User_CPU=0.01, System_CPU=0.01, Wall_clock=0.
 
 ============================== end of statistics =====================
 
@@ -122,24 +119,24 @@ THEOREM PROVED
 
 Exiting with 1 proof.
 
------- process 70862 exit (max_proofs) ------
+------ process 74770 exit (max_proofs) ------
 
-Process 70862 exit (max_proofs) Tue Nov 17 18:55:28 2015
-MacBook-Air:~ billw$
+Process 74770 exit (max_proofs) Tue Nov 17 21:04:05 2015
+MacBook-Air:~ billw$ 
 
 END%
 
 formulas(assumptions).
 
  % assumption
-  (-X -> M).
+  -(X -> M).
 
   % assumption
-   (-Y -> -M).
+   -(Y -> -M).
 
 end_of_list.
 
 formulas(goals).
  % goal
-  -X -> Y.
+  -(X -> Y).
 end_of_list.

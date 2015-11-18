@@ -2,8 +2,8 @@
 MacBook-Air:~ billw$ /Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/logic_book/symbolic/page057a.in
 ============================== Prover9 ===============================
 Prover9 (64) version 2009-11A, November 2009.
-Process 70547 was started by billw on MacBook-Air.local,
-Tue Nov 17 18:45:57 2015
+Process 70743 was started by billw on MacBook-Air.local,
+Tue Nov 17 18:53:25 2015
 The command was "/Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/logic_book/symbolic/page057a.in".
 ============================== end of head ===========================
 
@@ -13,12 +13,12 @@ The command was "/Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/bill
 
 
 formulas(assumptions).
-(all c Fc).
-(exists k kc).
+(all c (c -> F)).
+(exists k (k -> c)).
 end_of_list.
 
 formulas(goals).
-exists(Fk).
+(exists k (k -> F)).
 end_of_list.
 
 ============================== end of input ==========================
@@ -26,9 +26,9 @@ end_of_list.
 ============================== PROCESS NON-CLAUSAL FORMULAS ==========
 
 % Formulas that are not ordinary clauses:
-1 (all c Fc) # label(non_clause).  [assumption].
-2 (exists k kc) # label(non_clause).  [assumption].
-3 exists(Fk) # label(non_clause) # label(goal).  [goal].
+1 (all c (c -> F)) # label(non_clause).  [assumption].
+2 (exists k (k -> c)) # label(non_clause).  [assumption].
+3 (exists k (k -> F)) # label(non_clause) # label(goal).  [goal].
 
 ============================== end of process non-clausal formulas ===
 
@@ -40,9 +40,10 @@ formulas(usable).
 end_of_list.
 
 formulas(sos).
-Fc.  [clausify(1)].
-kc.  [clausify(2)].
--exists(Fk).  [deny(3)].
+-x | F.  [clausify(1)].
+-c1 | c.  [clausify(2)].
+x.  [deny(3)].
+-F.  [deny(3)].
 end_of_list.
 
 formulas(demodulators).
@@ -50,15 +51,18 @@ end_of_list.
 
 ============================== PREDICATE ELIMINATION =================
 
-Eliminating exists/1
+Eliminating /-1
+4 x.  [deny(3)].
+5 -x | F.  [clausify(1)].
+Derived: F.  [resolve(4,a,5,a)].
 
 ============================== end predicate elimination =============
 
 Auto_denials:  (no changes).
 
 Term ordering decisions:
-Predicate symbol precedence:  predicate_order([ Fc, kc ]).
-Function symbol precedence:  function_order([ ]).
+Predicate symbol precedence:  predicate_order([ F, c ]).
+Function symbol precedence:  function_order([ c1 ]).
 After inverse_order:  (no changes).
 Unfolding symbols: (none).
 
@@ -71,40 +75,33 @@ Auto_inference settings:
 
 Auto_process settings:  (no changes).
 
-kept:      4 Fc.  [clausify(1)].
-kept:      5 kc.  [clausify(2)].
+kept:      6 -c1 | c.  [clausify(2)].
+kept:      7 -F.  [deny(3)].
+kept:      8 F.  [resolve(4,a,5,a)].
+-------- Proof 1 --------
 
-============================== end of process initial clauses ========
+============================== PROOF =================================
 
-============================== CLAUSES FOR SEARCH ====================
+% Proof 1 at 0.01 (+ 0.00) seconds.
+% Length of proof is 7.
+% Level of proof is 3.
+% Maximum clause weight is 1.000.
+% Given clauses 0.
 
-% Clauses after input processing:
+1 (all c (c -> F)) # label(non_clause).  [assumption].
+3 (exists k (k -> F)) # label(non_clause) # label(goal).  [goal].
+4 x.  [deny(3)].
+5 -x | F.  [clausify(1)].
+7 -F.  [deny(3)].
+8 F.  [resolve(4,a,5,a)].
+9 $F.  [resolve(8,a,7,a)].
 
-formulas(usable).
-end_of_list.
-
-formulas(sos).
-4 Fc.  [clausify(1)].
-5 kc.  [clausify(2)].
-end_of_list.
-
-formulas(demodulators).
-end_of_list.
-
-============================== end of clauses for search =============
-
-============================== SEARCH ================================
-
-% Starting search at 0.01 seconds.
-
-given #1 (I,wt=1): 4 Fc.  [clausify(1)].
-
-given #2 (I,wt=1): 5 kc.  [clausify(2)].
+============================== end of proof ==========================
 
 ============================== STATISTICS ============================
 
-Given=2. Generated=2. Kept=2. proofs=0.
-Usable=2. Sos=0. Demods=0. Limbo=0, Disabled=3. Hints=0.
+Given=0. Generated=3. Kept=3. proofs=1.
+Usable=0. Sos=0. Demods=0. Limbo=2, Disabled=5. Hints=0.
 Kept_by_rule=0, Deleted_by_rule=0.
 Forward_subsumed=0. Back_subsumed=0.
 Sos_limit_deleted=0. Sos_displaced=0. Sos_removed=0.
@@ -119,15 +116,15 @@ User_CPU=0.01, System_CPU=0.00, Wall_clock=0.
 
 ============================== end of search =========================
 
-SEARCH FAILED
+THEOREM PROVED
 
-SEARCH FAILED
+THEOREM PROVED
 
-Exiting with failure.
+Exiting with 1 proof.
 
------- process 70547 exit (sos_empty) ------
+------ process 70743 exit (max_proofs) ------
 
-Process 70547 exit (sos_empty) Tue Nov 17 18:45:57 2015
+Process 70743 exit (max_proofs) Tue Nov 17 18:53:25 2015
 MacBook-Air:~ billw$
 
 END%
@@ -135,14 +132,14 @@ END%
 formulas(assumptions).
 
  % assumption
-  all c (Fc).
+  all c (c -> F).
 
   % assumption
-   exists k (kc).
+   exists k (k -> c).
 
 end_of_list.
 
 formulas(goals).
  % goal
-  exists (Fk).
+  exists k (k -> F).
 end_of_list.
